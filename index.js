@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // creator data
   const response = await fetch(
-    `http://localhost:3010/api/api/v3/get-web-view-creators`,
+    `https://kind-taxis-clap.loca.lt/api/api/v3/get-web-view-creators`,
     {
       headers: {
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
