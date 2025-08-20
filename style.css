@@ -66,13 +66,13 @@
 }
 
 .hero-creator-section {
-  height: 130px;
+  height: 170px;
   z-index: 1;
 }
 
 .hero-creator-list-section {
   padding: 10px;
-  height: 130px;
+  height: 170px;
   display: flex;
   gap: 12px;
   width: 100%;
@@ -100,23 +100,14 @@
 /*  */
 .creator-card {
   border: 2px solid #d7d7d7;
-  /* background: linear-gradient(
-    180deg,
-    rgba(247, 247, 247, 0) 0%,
-    rgba(215, 215, 215, 1) 100%
-  );
-  min-width: 80px;
-  max-width: 100px;
-  height: 100%;
-  border-radius: 12px; */
 }
 .brand-card {
-  width: 120px;
+  width: 108px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 16px;
+  padding: 10px;
   font-family: Arial, sans-serif;
   flex-shrink: 0;
   display: flex;
@@ -124,22 +115,47 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  height: 105%;
+  height: 139px;
+  gap: 0.5px;
 }
 
 .creator-inner-card {
   width: 100%;
-  height: 80px; /* fixed logo container height */
+  height: 100px; /* fixed logo container height */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Creates the tilted oval background */
+.creator-inner-card::before {
+  content: "";
+  position: absolute;
+  width: 105px;
+  height: 80px;
+  background-color: #ece8e8;
+  /* Updated box-shadow to include an inner (inset) and outer shadow */
+  box-shadow: inset -4px -4px 6px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50%; /* This creates the oval shape */
+  transform: rotate(+135deg); /* This tilts the oval */
+  z-index: 1; /* Place it behind the logo */
+  margin-bottom: 5px;
+  margin-top: 10px; /* Adjusted to create space for the logo */
 }
 
 .creator-card-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
+  width: 84px; /* fixed logo width */
+  height: 84px;
+  max-height: 88px;
+  max-width: 88px;
+  object-fit: contain; /* Ensures the image fits within the container */
+  position: relative; /* Ensure the image can have a z-index */
+  z-index: 2;
+  margin-top: 2px;
+  /* margin-bottom: 10px; */
 }
 
 .creator-card-link {
@@ -158,24 +174,20 @@
   border-radius: 12px;
   color: white;
   background: linear-gradient(103.9deg, #bc4e9c -10.76%, #f80759 95.79%);
+  z-index: 3;
 }
-/* .creator-card-text {
-  font-size: 10px;
+
+.creator-card-text {
+  font-size: 14px;
   color: #333;
   margin-top: 4px;
   text-align: center;
-} */
-.creator-card-text {
-  font-size: 10px;
-  color: #333;
-  margin-top: 4px;
-  text-align: center; /* optional */
-
   display: block;
-  width: 100%;
-  min-width: 0; /* 🔑 ensures flex can shrink */
-  /* overflow: hidden; */
+  width: 88px;
+  height: 16px;
+  min-width: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: 1.2em;
+  margin-bottom: 10px;
 }
