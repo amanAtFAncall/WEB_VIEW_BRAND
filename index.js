@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", async () => {
   // url params
   const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get("token");
+  const token =
+    urlParams.get("token") ||
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MTEyNyIsImVtYWlsIjoiYWJjMDgyNjE0M0BnbWFpbC5jb20iLCJwaG9uZV9udW1iZXIiOiIxMjM0MTA0NTM3IiwidXNlcm5hbWUiOiJWSUpBWVRFQ0hJREVBUyIsInJvbGVfaWQiOjMsImNlbGVicml0eV90eXBlIjoieW91dHViZXIiLCJjbGllbnRfdG9rZW4iOiI0YjQ3OGI5Ni0yYWYzLTQzNzYtODNmOS03YmFhZDVhYTU4MzMiLCJpYXQiOjE3NTU1OTQ0MDF9.TAkydlaQZxc8Gl6su50hwIKe6dCdAYZZpcunNQ5jKvE";
   console.log("Token:", token);
 
   // creator data
   const response = await fetch(
-    `https://shaggy-parrots-heal.loca.lt/api/api/v3/get-web-view-creators`,
+    `https://cute-pianos-battle.loca.lt/api/api/v3/get-web-view-creators`,
     {
       headers: {
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
