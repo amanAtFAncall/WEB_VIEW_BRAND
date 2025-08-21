@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // creator data
   const response = await fetch(
-    `https://kind-taxis-clap.loca.lt/api/api/v3/get-web-view-creators`,
+    `https://shaggy-parrots-heal.loca.lt/api/api/v3/get-web-view-creators`,
     {
       headers: {
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
