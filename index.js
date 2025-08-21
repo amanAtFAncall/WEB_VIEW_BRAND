@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     creatorCardText.innerText =
       brandName.length > 10 ? brandName.slice(0, 10) + "..." : brandName;
     creatorCard.className = "brand-card";
-    creatorCard.id = `creator-id-${creator.creator_id}`;
-    creatorCard.setAttribute("data-id", creator.creator_id);
+    creatorCard.id = `creator-id-${creator.id}`;
+    creatorCard.setAttribute("data-id", creator.id);
 
     creatorCardInner.className = "creator-inner-card";
     creatorCardImg.className = "creator-card-img";
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     creatorCardText.className = "creator-card-text";
 
     creatorCardImg.src = creator.brand_logo;
-    creatorCardLink.href = creator.creator_id; // (unchanged)
+    creatorCardLink.href = creator.id; // (unchanged)
     creatorCardLink.innerText = "Top on Fancall";
     // creatorCardText.innerText = creator.brand_name?.slice(0, 10) + "...";
     creatorCardText.title = creator.brand_name; // ✅ show full text on hover
